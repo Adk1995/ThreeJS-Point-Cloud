@@ -10,6 +10,13 @@ var cube=new THREE.Mesh(geometry,material);
 scene.add(cube);
 camera.position.z=5;
 
+var loader=new THREE.FileLoader();
+loader.load('data/058.csv',function(data){
+  var result=$.csv.toArrays(data);
+  console.log(result);
+});
+
+THREE.Cache.enabled=true;
 
 function animate() {
 	requestAnimationFrame( animate );
